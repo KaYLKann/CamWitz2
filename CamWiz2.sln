@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamWiz2.Android", "CamWiz2\CamWiz2.Android\CamWiz2.Android.csproj", "{7AEFFCCB-0CFE-4950-9F98-64A57F634748}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamWiz2", "CamWiz2\CamWiz2\CamWiz2.csproj", "{CF641CE1-DAAE-4BAC-87F7-772DE87A54D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AEFFCCB-0CFE-4950-9F98-64A57F634748}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AEFFCCB-0CFE-4950-9F98-64A57F634748}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AEFFCCB-0CFE-4950-9F98-64A57F634748}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7AEFFCCB-0CFE-4950-9F98-64A57F634748}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AEFFCCB-0CFE-4950-9F98-64A57F634748}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AEFFCCB-0CFE-4950-9F98-64A57F634748}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{CF641CE1-DAAE-4BAC-87F7-772DE87A54D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF641CE1-DAAE-4BAC-87F7-772DE87A54D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF641CE1-DAAE-4BAC-87F7-772DE87A54D3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CF641CE1-DAAE-4BAC-87F7-772DE87A54D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF641CE1-DAAE-4BAC-87F7-772DE87A54D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF641CE1-DAAE-4BAC-87F7-772DE87A54D3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6789051F-9377-4644-99B8-43BC4829F78C}
+	EndGlobalSection
+EndGlobal
