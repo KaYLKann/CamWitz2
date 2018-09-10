@@ -13,5 +13,12 @@ namespace CamWiz2
         {
             InitializeComponent();
         }
+
+        protected override void OnAppearing() {
+            base.OnAppearing();
+            CameraView.NotifyOpenCamera(true);
+        }
+
+        
     }
 }

@@ -2,13 +2,53 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CamWiz2"
+             xmlns:cameraImpl="clr-namespace:CamWiz2.CameraImplementation;assembly=CamWiz2"
              x:Class="CamWiz2.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+    <!--<StackLayout>
+        --><!-- Place new controls here -->
+        <!--<Label Text="Welcome to Xamarin.Forms!" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+           VerticalOptions="CenterAndExpand" />--><!--
+
+        <cameraImpl:CameraView x:Name="CameraView" BackgroundColor="Black"            
+                               HorizontalOptions="Center"
+                               VerticalOptions="CenterAndExpand"/>
+    </StackLayout>-->
+
+    <Grid x:Name="MainLayout" BackgroundColor="Black" 
+          RowSpacing="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+
+<!--        <cameraImpl:CameraView x:Name="CameraView" BackgroundColor="Black" 
+                               Grid.Row="0" 
+                               Grid.RowSpan="{Binding PageOrientation, Converter={StaticResource OrientationToIntConverter}, ConverterParameter='7, 6'}" 
+                               Grid.Column="0" 
+                               Grid.ColumnSpan="{Binding PageOrientation, Converter={StaticResource OrientationToIntConverter}, ConverterParameter='5, 6'}"/>-->
+
+        <cameraImpl:CameraView x:Name="CameraView" BackgroundColor="Black" 
+                               Grid.Row="0" 
+                               Grid.RowSpan="6" 
+                               Grid.Column="0" 
+                               Grid.ColumnSpan="6"/>
+
+    </Grid>
 
 </ContentPage>
