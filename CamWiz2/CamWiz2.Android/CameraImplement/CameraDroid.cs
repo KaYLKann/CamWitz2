@@ -15,6 +15,7 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Java.Lang;
+using Java.Net;
 
 namespace CamWiz2.Droid.CameraImplement
 {
@@ -229,7 +230,7 @@ namespace CamWiz2.Droid.CameraImplement
                 // We are opening the camera with a listener. When it is ready, OnOpened of mStateListener is called. 
                 _manager.OpenCamera(cameraId, _mStateListener, null);
 
-                System.Diagnostics.Debug.WriteLine("        [camera debug] camera is opened");
+                System.Diagnostics.Debug.WriteLine("            [camera debug] camera is opened");
             }
             catch (Java.Lang.Exception error)
             {
@@ -245,10 +246,40 @@ namespace CamWiz2.Droid.CameraImplement
             }
         }
 
-        public void TakeVideo() {
-            //var reader = Android.Media.Reader
+        public void SetVideo() {
+            var recorder = new Android.Media.MediaRecorder();
+            recorder.SetAudioSource(AudioSource.Mic);
+            recorder.SetVideoSource(VideoSource.Surface);
+            recorder.SetOutputFormat(OutputFormat.Mpeg4);
+            recorder.SetVideoEncodingBitRate(10000000);
+            recorder.SetVideoFrameRate(30);
+            recorder.SetVideoEncoder(VideoEncoder.H264);
+            recorder.SetAudioEncoder(AudioEncoder.Aac);
+            recorder.SetVideoSize(_previewSize.Width, _previewSize.Height);
+            SurfaceOrientation rotation = windowManager.DefaultDisplay.Rotation;
 
-            
+            recorder.SetOrientationHint();
+
+            var pfd = new ParcelFileDescriptor(ParcelFileDescriptor.FromSocket(new Socket()));
+            recorder.SetOutputFile(pfd.FileDescriptor);
+
+            #region sample
+            /*mediaRecorder.SetAudioSource(AudioSource.Mic);
+            mediaRecorder.SetVideoSource(VideoSource.Surface);
+            mediaRecorder.SetOutputFormat(OutputFormat.Mpeg4);
+            mediaRecorder.SetOutputFile(GetVideoFile(Activity).AbsolutePath);
+            mediaRecorder.SetVideoEncodingBitRate(10000000);
+            mediaRecorder.SetVideoFrameRate(30);
+            mediaRecorder.SetVideoSize(videoSize.Width, videoSize.Height);
+            mediaRecorder.SetVideoEncoder(VideoEncoder.H264);
+            mediaRecorder.SetAudioEncoder(AudioEncoder.Aac);
+            int rotation    = (int)Activity.WindowManager.DefaultDisplay.Rotation;
+            int orientation = ORIENTATIONS.Get(rotation);
+            mediaRecorder.SetOrientationHint(orientation);          //
+            mediaRecorder.Prepare();*/
+            #endregion
+
+
         }
 
         public void TakePhoto()
